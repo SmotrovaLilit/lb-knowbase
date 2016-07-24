@@ -26,7 +26,6 @@
 - в /etc/mysql/conf.d  создать файл bitrix.cnf
 - поместить в него следующее
 ```
-#!
 [mysqld]
 innodb_flush_log_at_trx_commit = 2
 innodb_flush_method = O_DIRECT
@@ -50,7 +49,6 @@ thread_cache_size = 4
 ## Конфигурация php для битрикса
 - в /etc/php/5.6/mods-available создать файл bitrix.ini и поместить 
 ```
-#!
 
 [PHP]
 realpath_cache_size=4096K
@@ -69,7 +67,6 @@ date.timezone = 'Europe/Moscow'
 
 ## Если необходимо сменить версию php
 ```
-#!
 sudo a2dismod php7.0
 a2enmod php5.6
 ```
@@ -79,7 +76,6 @@ a2enmod php5.6
 - изменить  /etc/php/5.6/mods-available файл xdebug.ini
 - поместить в него 
 ```
-#!
 xdebug.remote_enable=1
 xdebug.remote_port=9000
 xdebug.idekey=PHPSTORM
@@ -91,4 +87,3 @@ xdebug.remote_handler=dbgp
 
 - sudo phpenmod xdebug.ini 
 - sudo systemctl status apache2.service
- 
