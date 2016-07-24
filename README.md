@@ -1,7 +1,7 @@
 # Интструменты для работы с битриксом
 
 ## Разделы
-- [Установка LAMP-SERVER, настройка среды LINUX](#articles/linux/Настройка среды/README.md)
+- [Установка LAMP-SERVER, настройка среды LINUX](/articles/linux/Настройка среды/README.md)
 - [Компоненты](#Компоненты)
 - [Инструкции](#Инструкции)
 - [Миграции](#Инструкции)
@@ -25,8 +25,8 @@
 - [Cписок новостей с кнопкой показать еще](https://github.com/BabayanLilit/news_list_width_show_more_button)
 - [Cписок новостей с разным количеством нововстей на первой и последующих страницах](https://github.com/BabayanLilit/news_list_width_different_count)
 - [Постраничное листание детальной новости](https://github.com/BabayanLilit/bitrix_news_detail_width_navigation)
-- [Создание админской страницы. Админская таблица](#articles/bitrix/Админская страница/README.md)
-- [Создание админской вкладки](#articles/bitrix/Админская вкладка/README.md)
-- [Добавление пункта в админское меню](#articles/bitrix/Аминское меню/README.md)
+- [Создание админской страницы. Админская таблица](/articles/bitrix/Админская страница/README.md)
+- [Создание админской вкладки](/articles/bitrix/Админская вкладка/README.md)
+- [Добавление пункта в админское меню](/articles/bitrix/Аминское меню/README.md)
 - [Многоуровневое меню, удобное представление данных для шаблона]
 
