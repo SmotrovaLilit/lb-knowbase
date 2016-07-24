@@ -1,0 +1,94 @@
+# Установка LAMP-SERVER, настройка среды LINUX
+
+1. sudo tasksel install lamp-server
+2. sudo apt-get install phpmyadmin
+3. sudo a2enmod vhost_alias - включаем модуль для создания виртуального хоста
+4. sudo a2enmod rewrite - Включаем  mod_rewrite.
+5. Настройка хоста
+```
+<VirtualHost *:80>
+	Options FollowSymLinks
+	
+	VirtualDocumentRoot "/home/programmer/workspace/%0/www"
+	ServerName workspace.local
+	ServerAlias *.local
+	UseCanonicalName Off
+	
+	<Directory /home/programmer/workspace>
+		Allowoverride all
+		Require all granted
+	</Directory>
+</VirtualHost>
+```
+6. a2ensite *.conf - активация конфигурации
+
+## Конфигурация mysql 
+- в /etc/mysql/conf.d  создать файл bitrix.cnf
+- поместить в него следующее
+```
+#!
+[mysqld]
+innodb_flush_log_at_trx_commit = 2
+innodb_flush_method = O_DIRECT
+transaction-isolation = READ-COMMITTED
+query_cache_size = 128M
+query_cache_limit = 2M
+sort_buffer_size = 10M
+read_rnd_buffer_size = 10M
+table_open_cache = 512
+innodb_buffer_pool_size = 512M
+innodb_buffer_pool_instances = 2
+tmp_table_size = 1024M
+max_heap_table_size = 1024M
+max-connect-errors = 10000
+table_definition_cache = 2048
+thread_cache_size = 4
+
+```
+- sudo systemctl restart mysql.service
+
+## Конфигурация php для битрикса
+- в /etc/php/5.6/mods-available создать файл bitrix.ini и поместить 
+```
+#!
+
+[PHP]
+realpath_cache_size=4096K
+magic_quotes_gpc=0
+max_input_vars=10000
+memory_limit=512M
+upload_max_filesize=64M
+post_max_size=64M
+short_open_tag=On
+
+[Date]
+date.timezone = 'Europe/Moscow'
+
+```
+
+
+## Если необходимо сменить версию php
+```
+#!
+sudo a2dismod php7.0
+a2enmod php5.6
+```
+
+## Настройка xdebug
+- установить модуль sudo apt-get install php-xdebug
+- изменить  /etc/php/5.6/mods-available файл xdebug.ini
+- поместить в него 
+```
+#!
+xdebug.remote_enable=1
+xdebug.remote_port=9000
+xdebug.idekey=PHPSTORM
+xdebug.remote_autostart=0
+xdebug.remote_host=localhost
+xdebug.remote_handler=dbgp
+
+```
+
+- sudo phpenmod xdebug.ini 
+- sudo systemctl status apache2.service
+ 
