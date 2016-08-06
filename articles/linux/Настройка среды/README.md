@@ -4,23 +4,43 @@
 2. sudo apt-get install phpmyadmin
 3. sudo a2enmod vhost_alias - включаем модуль для создания виртуального хоста
 4. sudo a2enmod rewrite - Включаем  mod_rewrite.
-5. Настройка хоста
+5. sudo apt-get install libapache2-mpm-itk
+6. Настройка хоста
 ```
 <VirtualHost *:80>
-	Options FollowSymLinks
-	
-	VirtualDocumentRoot "/home/programmer/workspace/%0/www"
-	ServerName workspace.local
-	ServerAlias *.local
-	UseCanonicalName Off
-	
-	<Directory /home/programmer/workspace>
-		Allowoverride all
-		Require all granted
-	</Directory>
+
+    ServerName workspace
+
+    AssignUserID programmer programmer
+
+    VirtualDocumentRoot /home/programmer/workspace/vhosts/%2/%1/www
+
+    LogFormat "%v %l %u %t \"%r\" %>s %b" comonvhost
+    CustomLog /home/programmer/workspace/vhosts/logs/access_log comonvhost
+    ErrorLog  /home/programmer/workspace/vhosts/logs/error_log    
+
+    <Directory /home/programmer/workspace/vhosts/>
+        Allowoverride all
+        Require all granted
+    </Directory>
+
+    <Directory /home/programmer/workspace/vhosts/utf8>
+        php_admin_value mbstring.func_overload 2
+           php_admin_value mbstring.internal_encoding utf-8    
+    </Directory>
+
+    <Directory /home/programmer/workspace/vhosts/cp1251>
+               php_admin_value mbstring.func_overload 0
+       </Directory>
 </VirtualHost>
+
 ```
-6. a2ensite *.conf - активация конфигурации
+project.utf8.dev
+/home/programmer/workspace/vhosts/utf8/projectname/www
+
+7. a2ensite *.conf - активация конфигурации
+8. sudo apt-get install dnsmasq
+9. sudo vim /etc/dnsmasq.conf найти строчку с 127.0.0.1   заменить на address=/dev/127.0.0.1
 
 ## Конфигурация mysql 
 - в /etc/mysql/conf.d  создать файл bitrix.cnf
@@ -63,6 +83,12 @@ short_open_tag=On
 date.timezone = 'Europe/Moscow'
 
 ```
+sudo ln -s /etc/php/7.0/mods-available/bitrix.ini  /etc/php/7.0/apache2/conf.d/20-bitrix.ini
+
+sudo apt-get install php-mbstring
+
+## Установка почты
+sudo apt-get install postfix
 
 
 ## Если необходимо сменить версию php
