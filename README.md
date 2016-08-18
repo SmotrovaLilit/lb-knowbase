@@ -23,7 +23,7 @@
 
 ## Шаблонные задачи
 - [Cписок новостей с кнопкой показать еще](https://github.com/BabayanLilit/news_list_width_show_more_button)
-- [Cписок новостей с разным количеством нововстей на первой и последующих страницах](https://github.com/BabayanLilit/news_list_width_different_count)
+- [Cписок новостей с разным количеством нововстей на первой и последующих страницах](https://github.com/BabayanLilit/news_list_width_different_count_on_page)
 - [Постраничное листание детальной новости](https://github.com/BabayanLilit/bitrix_news_detail_width_navigation)
 - [Создание админской страницы. Админская таблица](/articles/bitrix/Админская страница/README.md)
 - [Создание админской вкладки](/articles/bitrix/Админская вкладка/README.md)
