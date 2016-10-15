@@ -110,6 +110,11 @@ xdebug.remote_host=localhost
 xdebug.remote_handler=dbgp
 
 ```
+Настроить phpstorm ![alt text](../phpstorm_settings_xdebug.jpg)
+![alt text](../phpstorm_settings_php.jpg)
+
+Настройки плагина в хроме
+![alt text](../phpstorm_settings_xdebug.jpg)
 
 - sudo phpenmod xdebug.ini 
 - sudo systemctl status apache2.service
