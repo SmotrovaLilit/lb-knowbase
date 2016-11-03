@@ -1,4 +1,4 @@
-# Установка LAMP-SERVER, настройка среды LINUX
+# Установка LAMP-SERVER, настройка среды LINUX для битрикс
 
 1. sudo tasksel install lamp-server
 2. sudo apt-get install phpmyadmin
