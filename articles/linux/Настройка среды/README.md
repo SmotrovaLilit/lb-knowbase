@@ -83,14 +83,18 @@ short_open_tag=On
 date.timezone = 'Europe/Moscow'
 
 ```
+```sh
 phpenmod bitrix
 
 sudo apt-get install php5.6-mcrypt
 phpenmod mcrypt
 sudo apt-get install php-mbstring
+```
 
 ## Установка почты
+```sh
 sudo apt-get install postfix
+```
 
 
 ## Если необходимо сменить версию php
@@ -118,5 +122,7 @@ xdebug.remote_handler=dbgp
 Настройки плагина в хроме
 ![alt text](../phpstorm_settings_xdebug.jpg)
 
-- sudo phpenmod xdebug.ini 
-- sudo systemctl status apache2.service
+```sh
+sudo phpenmod xdebug.ini 
+sudo systemctl status apache2.service
+```
