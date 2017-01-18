@@ -83,8 +83,10 @@ short_open_tag=On
 date.timezone = 'Europe/Moscow'
 
 ```
-sudo ln -s /etc/php/7.0/mods-available/bitrix.ini  /etc/php/7.0/apache2/conf.d/20-bitrix.ini
+phpenmod bitrix
 
+sudo apt-get install php5.6-mcrypt
+phpenmod mcrypt
 sudo apt-get install php-mbstring
 
 ## Установка почты
