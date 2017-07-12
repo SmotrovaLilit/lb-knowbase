@@ -18,9 +18,6 @@
 Для использования в проектах, где нельзя подключить готовые инструменты миграций
 - [Инструмент для создания миграций](https://github.com/BabayanLilit/migration-tool)
 
-## Инструкции
-- [Настройка прав доступа для контент менеджера] (https://docs.google.com/document/d/1f-awiq36kFTpAKugf27j_3qoOT5zVOM_w89Mfq9Zm88/edit?usp=sharing)
-
 ## Шаблонные задачи
 - [Cписок новостей с кнопкой показать еще](https://github.com/BabayanLilit/news_list_width_show_more_button)
 - [Cписок новостей с разным количеством нововстей на первой и последующих страницах](https://github.com/BabayanLilit/news_list_width_different_count_on_page)
