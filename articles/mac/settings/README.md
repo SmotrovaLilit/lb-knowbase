@@ -75,7 +75,18 @@ https://gist.github.com/nrollr/a8d156206fa1e53c6cd6
 ```
 brew install php55-xdebug
 ```
-
+```
+open -e  /usr/local/etc/php/5.5/conf.d/ext-xdebug.ini
+```
+Добавить следующее :
+```
+xdebug.remote_enable=1
+xdebug.remote_port=9000
+xdebug.idekey=PHPSTORM
+xdebug.remote_autostart=0
+xdebug.remote_host=localhost
+xdebug.remote_handler=dbgp
+```
 8. Установка composer
 ```
 curl -sS https://getcomposer.org/installer | php
