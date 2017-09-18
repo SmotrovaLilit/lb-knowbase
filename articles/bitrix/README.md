@@ -25,4 +25,5 @@
 - [Создание админской страницы. Админская таблица](/articles/bitrix/admin_page/README.md)
 - [Создание админской вкладки](/articles/bitrix/admin_tab/README.md)
 - [Добавление пункта в админское меню](/articles/bitrix/admin_menu/README.md)
+- [Ссылка в админку в административной панели](/articles/bitrix/admin_link_in_public_panel/README.md)
 
