@@ -1,4 +1,4 @@
-# Установка LAMP-SERVER, настройка среды LINUX для битрикс
+# Установка LAMP-SERVER, настройка среды
 
 1. sudo tasksel install lamp-server
 2. sudo apt-get install phpmyadmin
@@ -42,55 +42,6 @@ project.utf8.dev
 8. sudo apt-get install dnsmasq
 9. sudo vim /etc/dnsmasq.conf найти строчку с 127.0.0.1   заменить на address=/dev/127.0.0.1
 
-## Конфигурация mysql 
-- в /etc/mysql/conf.d  создать файл bitrix.cnf
-- поместить в него следующее
-```
-[mysqld]
-innodb_flush_log_at_trx_commit = 2
-innodb_flush_method = O_DIRECT
-transaction-isolation = READ-COMMITTED
-query_cache_size = 128M
-query_cache_limit = 2M
-sort_buffer_size = 10M
-read_rnd_buffer_size = 10M
-table_open_cache = 512
-innodb_buffer_pool_size = 512M
-innodb_buffer_pool_instances = 2
-tmp_table_size = 1024M
-max_heap_table_size = 1024M
-max-connect-errors = 10000
-table_definition_cache = 2048
-thread_cache_size = 4
-
-```
-- sudo systemctl restart mysql.service
-
-## Конфигурация php для битрикса
-- в /etc/php/5.6/mods-available создать файл bitrix.ini и поместить 
-```
-
-[PHP]
-realpath_cache_size=4096K
-magic_quotes_gpc=0
-max_input_vars=10000
-memory_limit=512M
-upload_max_filesize=64M
-post_max_size=64M
-short_open_tag=On
-
-[Date]
-date.timezone = 'Europe/Moscow'
-
-```
-```sh
-phpenmod bitrix
-
-sudo apt-get install php5.6-mcrypt
-phpenmod mcrypt
-sudo apt-get install php-mbstring
-```
-
 ## Установка почты
 ```sh
 sudo apt-get install postfix
@@ -126,3 +77,4 @@ xdebug.remote_handler=dbgp
 sudo phpenmod xdebug.ini 
 sudo systemctl status apache2.service
 ```
+[Установка xdebug удаленно](https://confluence.jetbrains.com/display/PhpStorm/Remote+debugging+in+PhpStorm+via+SSH+tunnel)
