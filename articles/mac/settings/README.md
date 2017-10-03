@@ -93,9 +93,5 @@ curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 ```
 9. Установка node.js и npm - https://github.com/creationix/nvm
-```
-brew install nvm
-npm i 
-```
 10. SSH ключи - https://help.github.com/articles/connecting-to-github-with-ssh/
 
